@@ -1,0 +1,82 @@
+{
+    "vision": {
+        "summary": "Street-level imagery shows a mid-rise urban corridor with active ground floor uses and consistent street wall.",
+        "buildings": [
+            {
+                "height_storeys": 6,
+                "materials": ["brick", "glass"],
+                "use": "retail-cafe",
+                "active_frontage": "True",
+                "architectural_style": "industrial-modern",
+                "confidence": 0.82
+            },
+            {
+                "height_storeys": 8,
+                "materials": ["concrete", "glass"],
+                "use": "mixed-use-residential",
+                "active_frontage": "True",
+                "architectural_style": "contemporary",
+                "confidence": 0.76
+            },
+            {
+                "height_storeys": 5,
+                "materials": ["brick"],
+                "use": "retail-restaurant",
+                "active_frontage": "True",
+                "architectural_style": "heritage-victorian",
+                "confidence": 0.71
+            }
+        ],
+        "street_character": {
+            "activity_level": "high",
+            "pedestrian_presence": "dense",
+            "vehicle_presence": "moderate",
+            "greenery": "sparse",
+            "lighting_condition": "daytime",
+            "weather": "clear"
+        },
+        "image_coverage": {
+            "num_images": 12,
+            "viewpoints": ["street-level", "corner views"],
+            "coverage_completeness": 0.78
+        }
+    },
+
+    "context": {
+        "location": "Inner-city high street, Melbourne, Australia",
+        "places_data": {
+            "dominant_categories": [
+                "cafe",
+                "restaurant",
+                "bar",
+                "boutique retail"
+            ],
+            "counts": {
+                "cafe": 18,
+                "restaurant": 22,
+                "bar": 9,
+                "retail": 14
+            }
+        },
+        "reviews_analysis": {
+            "overall_sentiment": 0.81,
+            "common_descriptors": [
+                "lively",
+                "trendy",
+                "busy",
+                "good nightlife",
+                "great food"
+            ],
+            "time_patterns": {
+                "daytime": "moderate activity",
+                "evening": "high activity",
+                "late_night": "active nightlife"
+            }
+        },
+        "mobility": {
+            "public_transport_access": "high",
+            "walkability_score": 0.87,
+            "traffic_level": "moderate"
+        }
+    }
+}
