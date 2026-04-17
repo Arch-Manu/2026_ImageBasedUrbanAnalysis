@@ -41,12 +41,6 @@ def extractmetadata(image_path):
     return {k: all_metadata.get(k) for k in keys}
 
 
-def blend_images(image_path):
-    blend = Image.open(image_path)
-    Image.blend(image1, image2, alpha)  
-
-
-
 
 def extract_pixel_info(image_path):
         pixel_info = {}
