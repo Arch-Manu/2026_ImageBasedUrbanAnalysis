@@ -2,47 +2,37 @@ from agents import *
 import json
 
 
-def run_analysis(input_data):
-    
-    print("Vision Agent analysing images…")
-    vision = vision_agent(input_data["images"])
-    
-    print("Context Agent reading reviews…")
-    context = context_agent(input_data["location"])
-    
-    print("Synthesising urban intelligence…")
-    final = synthesis_agent({
-        "vision": vision,
-        "context": context
-    })
-    
-    return final
-
-
-
-
-
-
 if __name__ == "__main__":
 
-    # run_analysis(data)
 
-    #SYNTHETIC DATASET TEST
-
-    with open('synthetic_input.JSON', 'r', encoding='utf-8') as file:
-        synthetic_input = json.load(file)
-
+    # -------------------------------------
+    # Vision Agent 
+    # -------------------------------------
 
     print("\nVision Agent analysing images…\n")
-    print(synthetic_input["vision"])
+    with open('vision_example.json', 'r', encoding='utf-8') as file:
+        vision_example = json.load(file)
+    # print(vision_example)
 
-    print("\nContext Agent reading reviews…\n")
-    print(synthetic_input["context"])
     
+    # -------------------------------------
+    # Place Agent 
+    # -------------------------------------
+
+    print("\nPlace Agent analysing place data…\n")
+    place_data = place_agent()
+    # print(place_data)
+   
+
+
+    # -------------------------------------
+    # Synthesis Agent
+    # -------------------------------------
+
     print("\nSynthesising urban intelligence…\n")
     final = synthesis_agent({
-        "vision": synthetic_input["vision"],
-        "context": synthetic_input["context"]
+        "vision": vision_example,
+        "place": place_data
     })
 
     
