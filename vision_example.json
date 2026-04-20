@@ -1,0 +1,687 @@
+{
+  "export_metadata": {
+    "tool": "Streetscape Analyser v0.2",
+    "export_timestamp": "2026-04-17T05:22:15.836Z",
+    "analysis_type": "street_survey",
+    "model": "claude-opus-4-5"
+  },
+  "street": {
+    "name": "Macquarie Street, Parramatta (between O'Connell Street and Marsden Street)",
+    "photo_count": 6,
+    "overall_liveability_mean": 46
+  },
+  "aggregate_scores": {
+    "pedestrian_activity": {
+      "mean": 25,
+      "min": 15,
+      "max": 35
+    },
+    "active_frontages": {
+      "mean": 32,
+      "min": 15,
+      "max": 45
+    },
+    "shade_comfort": {
+      "mean": 44,
+      "min": 30,
+      "max": 55
+    },
+    "green_infrastructure": {
+      "mean": 23,
+      "min": 10,
+      "max": 40
+    },
+    "walkability": {
+      "mean": 52,
+      "min": 45,
+      "max": 58
+    },
+    "perceived_safety": {
+      "mean": 53,
+      "min": 50,
+      "max": 58
+    },
+    "street_enclosure": {
+      "mean": 58,
+      "min": 52,
+      "max": 65
+    },
+    "heritage_character": {
+      "mean": 18,
+      "min": 10,
+      "max": 25
+    }
+  },
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "IMG_5542.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5542.JPEG",
+        "file_size_bytes": 1003261,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:24.292Z",
+        "dimensions": {
+          "width": 1536,
+          "height": 2048
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              252
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "mean_value": [
+            125.3129,
+            126.6999,
+            127.4822
+          ],
+          "median_value": [
+            136,
+            134,
+            128
+          ],
+          "variance": [
+            3552.724,
+            3518.8565,
+            3849.4967
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 48,
+        "verdict": "A functional CBD street with adequate pedestrian infrastructure but lacking vibrancy and human-scale activation. The dominance of corporate towers and minimal street-level engagement creates a sterile urban environment.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 25,
+            "note": "Very few pedestrians visible; street appears quiet and underutilized."
+          },
+          "active_frontages": {
+            "score": 35,
+            "note": "Ray White office provides some activation; otherwise blank podium facades dominate."
+          },
+          "shade_comfort": {
+            "score": 45,
+            "note": "Building awnings offer partial cover; limited tree canopy for solar protection."
+          },
+          "green_infrastructure": {
+            "score": 30,
+            "note": "Minimal planter boxes at building entry; no street trees or continuous greenery."
+          },
+          "walkability": {
+            "score": 55,
+            "note": "Wide brick-paved footpath in reasonable condition; clear pedestrian zone."
+          },
+          "perceived_safety": {
+            "score": 52,
+            "note": "Good sightlines and lighting infrastructure; low activity reduces passive surveillance."
+          },
+          "street_enclosure": {
+            "score": 65,
+            "note": "Strong vertical enclosure from towers; appropriate street-to-building height ratio."
+          },
+          "heritage_character": {
+            "score": 20,
+            "note": "No heritage elements visible; entirely modern commercial development."
+          }
+        },
+        "narrative": "This Brisbane CBD street exemplifies the tension between functional infrastructure and genuine urban vitality. While the generous brick-paved footpath and building awnings provide adequate pedestrian amenity, the corporate tower podiums offer minimal street-level activation beyond the real estate office. The wet pavement and overcast conditions accentuate the street's somewhat sterile character. Introducing continuous street tree planting and requiring fine-grain retail tenancies at ground level would significantly improve the pedestrian experience and urban life.",
+        "detected_elements": [
+          "Brick paver footpath",
+          "Building awnings",
+          "High-rise towers",
+          "Real estate office",
+          "Utility boxes",
+          "Traffic signals",
+          "Street lighting",
+          "Parked vehicles",
+          "NAB signage",
+          "Planter boxes",
+          "Accessibility ramp",
+          "Wet pavement"
+        ]
+      },
+      "error": null
+    },
+    {
+      "photo_index": 2,
+      "filename": "IMG_5546.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5546.JPEG",
+        "file_size_bytes": 982004,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:24.656Z",
+        "dimensions": {
+          "width": 1536,
+          "height": 2048
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "mean_value": [
+            105.2811,
+            117.3767,
+            128.7007
+          ],
+          "median_value": [
+            100,
+            110,
+            119
+          ],
+          "variance": [
+            3775.579,
+            3723.1442,
+            3815.9356
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 38,
+        "verdict": "A utilitarian institutional streetscape dominated by glass curtain walls and vehicle infrastructure. The street lacks human-scale activation and offers minimal comfort for pedestrians.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 25,
+            "note": "Sparse pedestrian presence; only 3-4 people visible on wide but underutilized footpaths."
+          },
+          "active_frontages": {
+            "score": 15,
+            "note": "Blank glass facades with no retail or active ground-floor uses; institutional character."
+          },
+          "shade_comfort": {
+            "score": 35,
+            "note": "Building overhang provides some shade; no street trees or awnings along footpath."
+          },
+          "green_infrastructure": {
+            "score": 10,
+            "note": "Virtually no vegetation; distant trees only; no street planting or green elements."
+          },
+          "walkability": {
+            "score": 45,
+            "note": "Wide footpaths and clear sightlines; hostile building interface reduces appeal."
+          },
+          "perceived_safety": {
+            "score": 50,
+            "note": "Good visibility and lighting potential; institutional presence offers passive surveillance."
+          },
+          "street_enclosure": {
+            "score": 55,
+            "note": "Strong building edge creates defined street wall; scale feels imposing rather than comfortable."
+          },
+          "heritage_character": {
+            "score": 10,
+            "note": "No heritage elements; generic late-modern commercial/institutional architecture throughout."
+          }
+        },
+        "narrative": "This street exemplifies a car-oriented institutional precinct with minimal pedestrian amenity. The reflective glass curtain wall creates visual monotony and offers no engagement at street level, while the building's colonnade and recessed entries fail to generate foot traffic. Strengths include generous footpath widths and clear spatial definition, but the absence of greenery, seating, or active uses creates a sterile environment. Recommendation: Introduce street tree planting with integrated seating nodes, and activate ground-floor spaces with retail or community uses to humanize the streetscape.",
+        "detected_elements": [
+          "Glass curtain wall facade",
+          "One-way street signage",
+          "Parallel parked cars",
+          "Wide footpath",
+          "Building colonnade",
+          "Institutional building",
+          "Wet road surface",
+          "Flag pole",
+          "Entry stairs",
+          "Street lighting",
+          "Road markings",
+          "Pickup truck"
+        ]
+      },
+      "error": null
+    },
+    {
+      "photo_index": 3,
+      "filename": "IMG_5548.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5548.JPEG",
+        "file_size_bytes": 984851,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:24.821Z",
+        "dimensions": {
+          "width": 2048,
+          "height": 1536
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              1,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "mean_value": [
+            119.2955,
+            125.0889,
+            127.9586
+          ],
+          "median_value": [
+            114,
+            118,
+            115
+          ],
+          "variance": [
+            4513.7758,
+            4443.0853,
+            4626.3653
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 48,
+        "verdict": "A functional commercial streetscape dominated by vehicle infrastructure and glass tower aesthetics, lacking human-scale amenity. The Ray White frontage provides some activation, but the street feels transactional rather than inviting.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 35,
+            "note": "Only 2-3 pedestrians visible; sparse foot traffic suggests limited street appeal."
+          },
+          "active_frontages": {
+            "score": 45,
+            "note": "Ray White office provides some transparency; adjacent tower base largely inactive."
+          },
+          "shade_comfort": {
+            "score": 30,
+            "note": "Minimal shade provision; narrow awning over real estate office only."
+          },
+          "green_infrastructure": {
+            "score": 25,
+            "note": "Small hedge planters only; no street trees or meaningful vegetation."
+          },
+          "walkability": {
+            "score": 50,
+            "note": "Adequate footpath width with ramp access; some street furniture present."
+          },
+          "perceived_safety": {
+            "score": 55,
+            "note": "Good sightlines, daylight visibility; moderate passive surveillance from offices."
+          },
+          "street_enclosure": {
+            "score": 58,
+            "note": "Strong vertical enclosure from tower; street wall continuity is reasonable."
+          },
+          "heritage_character": {
+            "score": 20,
+            "note": "No heritage elements; generic 1980s-90s commercial tower architecture."
+          }
+        },
+        "narrative": "This Australian commercial street exhibits typical CBD-fringe characteristics with a dominant glass curtain wall tower creating strong vertical presence but limited pedestrian engagement. The Ray White shopfront offers the only active retail interface, while the tower's ground plane remains austere and unwelcoming. Strengths include clear wayfinding, level footpath access, and reasonable enclosure ratios. A key recommendation would be introducing a continuous street tree canopy and activating the tower's ground floor with hospitality or retail uses.",
+        "detected_elements": [
+          "Glass curtain wall tower",
+          "Real estate shopfront",
+          "Street bench",
+          "Parked cars",
+          "Wide footpath",
+          "Pedestrian ramp",
+          "Awning canopy",
+          "Planter hedges",
+          "Utility pole",
+          "Road markings",
+          "Rubbish bin",
+          "Ute/work vehicle"
+        ]
+      },
+      "error": null
+    },
+    {
+      "photo_index": 4,
+      "filename": "IMG_5549.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5549.JPEG",
+        "file_size_bytes": 1025631,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:24.907Z",
+        "dimensions": {
+          "width": 1536,
+          "height": 2048
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              1,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "mean_value": [
+            110.1244,
+            120.1428,
+            128.617
+          ],
+          "median_value": [
+            102,
+            115,
+            123
+          ],
+          "variance": [
+            2756.4392,
+            2390.088,
+            2739.7921
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 42,
+        "verdict": "A functional but sterile commercial entrance lacking street-level activation and human-scale amenity. The corporate glass facade and hard surfaces create an uninviting pedestrian environment despite adequate accessibility infrastructure.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 15,
+            "note": "No visible pedestrians; entrance appears underutilized and lacks draw."
+          },
+          "active_frontages": {
+            "score": 20,
+            "note": "Blank corporate podium with no retail, glazing mostly reflective above."
+          },
+          "shade_comfort": {
+            "score": 45,
+            "note": "Recessed entrance provides some cover; exposed plaza areas lack shade."
+          },
+          "green_infrastructure": {
+            "score": 18,
+            "note": "Minimal greenery; distant tree visible but no street trees or planting beds."
+          },
+          "walkability": {
+            "score": 55,
+            "note": "Accessible ramp provided, clear sightlines, but uninviting hardscape dominates."
+          },
+          "perceived_safety": {
+            "score": 50,
+            "note": "Good visibility and lighting fixtures present; low activity reduces passive surveillance."
+          },
+          "street_enclosure": {
+            "score": 58,
+            "note": "Strong vertical edge from glass tower; ground plane somewhat undefined."
+          },
+          "heritage_character": {
+            "score": 25,
+            "note": "Older brick building glimpsed behind; new building lacks contextual response."
+          }
+        },
+        "narrative": "This commercial building entrance at 2-12 Macquarie Street exemplifies generic corporate podium design with reflective glass curtain walls and grey tile cladding that creates visual monotony. While accessibility is addressed through compliant ramps and handrails, the absence of active ground-floor uses, seating, or greenery results in a sterile pedestrian environment. The glimpse of heritage brick fabric behind highlights a missed opportunity for contextual dialogue. Recommendation: Introduce ground-level retail tenancies, integrated planter boxes with shade trees, and informal seating to activate the forecourt.",
+        "detected_elements": [
+          "Glass curtain wall",
+          "Accessible ramp",
+          "Metal handrails",
+          "Recessed entrance",
+          "Brick paving",
+          "Grey tile cladding",
+          "Recessed lighting",
+          "Heritage brick building",
+          "Building signage",
+          "Cylindrical columns",
+          "Storm drain grate",
+          "Yellow line markings"
+        ]
+      },
+      "error": null
+    },
+    {
+      "photo_index": 5,
+      "filename": "IMG_5537.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5537.JPEG",
+        "file_size_bytes": 1100636,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:23.554Z",
+        "dimensions": {
+          "width": 1536,
+          "height": 2048
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              3,
+              255
+            ],
+            [
+              5,
+              255
+            ]
+          ],
+          "mean_value": [
+            131.6633,
+            132.1319,
+            133.7032
+          ],
+          "median_value": [
+            143,
+            135,
+            129
+          ],
+          "variance": [
+            4069.8253,
+            3869.3145,
+            3903.9742
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 48,
+        "verdict": "A functional suburban commercial strip with adequate infrastructure but lacking vibrancy and greenery. The street prioritizes vehicle access over pedestrian experience, resulting in a sterile atmosphere.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 25,
+            "note": "Minimal pedestrian presence; only one person visible on wide empty footpath."
+          },
+          "active_frontages": {
+            "score": 40,
+            "note": "Dental clinic and retail present but limited activation; some blank facades visible."
+          },
+          "shade_comfort": {
+            "score": 55,
+            "note": "Building awnings provide overhead protection; cloudy conditions assist but no tree canopy."
+          },
+          "green_infrastructure": {
+            "score": 15,
+            "note": "Virtually no street trees or planting; entirely hardscaped environment."
+          },
+          "walkability": {
+            "score": 58,
+            "note": "Wide brick-paved footpath, level surfaces, adequate width for movement."
+          },
+          "perceived_safety": {
+            "score": 55,
+            "note": "Good sightlines and natural surveillance; low activity reduces passive monitoring."
+          },
+          "street_enclosure": {
+            "score": 52,
+            "note": "Multi-storey buildings provide some enclosure; gaps and setbacks weaken definition."
+          },
+          "heritage_character": {
+            "score": 20,
+            "note": "Generic 1990s-2000s commercial architecture; no distinctive heritage elements."
+          }
+        },
+        "narrative": "This suburban commercial street demonstrates functional urban design with wide accessible footpaths and weather-protected walkways, but suffers from a lack of activation and greenery. The dominance of car parking at the frontage and absence of street trees creates a harsh, uninviting pedestrian environment. Building design is generic and fails to contribute character or visual interest. A priority recommendation would be introducing street tree planting in build-outs within the parking lane to soften the hardscape and improve microclimate comfort.",
+        "detected_elements": [
+          "Brick paver footpath",
+          "Building awnings",
+          "Angle parking",
+          "Dental clinic",
+          "Commercial offices",
+          "Teal handrails",
+          "White SUVs",
+          "Utility covers",
+          "Street signage",
+          "Multi-storey buildings",
+          "Concrete kerbing",
+          "Traffic lane"
+        ]
+      },
+      "error": null
+    },
+    {
+      "photo_index": 6,
+      "filename": "IMG_5552.JPEG",
+      "file_metadata": {
+        "filename": "IMG_5552.JPEG",
+        "file_size_bytes": 949017,
+        "file_type": "image/jpeg",
+        "last_modified": "2025-04-23T23:52:25.158Z",
+        "dimensions": {
+          "width": 1536,
+          "height": 2048
+        },
+        "total_pixels": 3145728,
+        "pixel_stats": {
+          "total_pixels": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "min_max_values": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "mean_value": [
+            106.3089,
+            111.0057,
+            111.9522
+          ],
+          "median_value": [
+            96,
+            103,
+            106
+          ],
+          "variance": [
+            3692.5127,
+            3667.608,
+            3570.5997
+          ]
+        }
+      },
+      "urban_analysis": {
+        "overall_score": 52,
+        "verdict": "A contemporary corporate precinct with bold architectural gestures but limited street-level activation. The space prioritizes visual impact over pedestrian comfort and engagement.",
+        "dimension_scores": {
+          "pedestrian_activity": {
+            "score": 25,
+            "note": "Single person visible; plaza appears underutilized despite generous space."
+          },
+          "active_frontages": {
+            "score": 35,
+            "note": "Minimal retail presence; ground floor dominated by lobby and service areas."
+          },
+          "shade_comfort": {
+            "score": 55,
+            "note": "Deep canopy overhang provides shelter; exposed stairs lack coverage."
+          },
+          "green_infrastructure": {
+            "score": 40,
+            "note": "Single street tree and elevated planter greenery; limited ground-level planting."
+          },
+          "walkability": {
+            "score": 50,
+            "note": "Wide footpath but stairs create accessibility barrier; smooth surfaces."
+          },
+          "perceived_safety": {
+            "score": 58,
+            "note": "Good sightlines and lighting infrastructure; low activity reduces passive surveillance."
+          },
+          "street_enclosure": {
+            "score": 62,
+            "note": "Strong vertical definition from towers; V-column creates dramatic threshold."
+          },
+          "heritage_character": {
+            "score": 15,
+            "note": "Entirely contemporary commercial architecture; no heritage elements evident."
+          }
+        },
+        "narrative": "This CBD streetscape showcases contemporary corporate architecture with a distinctive V-shaped structural column creating a bold visual identity. The generous setback and elevated terrace with greenery suggest premium office development, likely in an Australian city. However, the street level suffers from limited activation—service entries and blank facades dominate, while the monumental staircase prioritizes aesthetics over universal access. Recommendation: Introduce ground-floor retail tenancies and weather-protected accessible ramps with integrated seating to improve pedestrian engagement.",
+        "detected_elements": [
+          "V-shaped structural column",
+          "Monumental stairs",
+          "Deep building canopy",
+          "Street tree",
+          "Elevated terrace planting",
+          "Glass balustrade",
+          "Service ventilation grilles",
+          "Wide footpath",
+          "Road markings",
+          "Building number signage",
+          "Recessed lighting",
+          "Commercial tower"
+        ]
+      },
+      "error": null
+    }
+  ]
+}
