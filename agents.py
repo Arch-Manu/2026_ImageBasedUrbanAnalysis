@@ -2,6 +2,7 @@
 
 #imports
 from dotenv import load_dotenv
+from pydantic import Json
 load_dotenv()
 
 from openai import OpenAI
@@ -9,6 +10,17 @@ client = OpenAI()
 
 import requests
 from bs4 import BeautifulSoup
+import base64  
+from pathlib import Path
+import os
+import json
+
+from lib.vision_prompt import analyse_img_prompt
+
+
+
+
+
 
 
 # --------------------------------------------------------------------
@@ -16,32 +28,55 @@ from bs4 import BeautifulSoup
 
 # 👓 Vision Agent
 
+# Function to encode local image
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+
+
+
+
+
+# Function to process images
 def vision_agent(images):
+    ROOT_DIR = Path(__file__).parent
+    json_filepath = ROOT_DIR / "image_response.json"
+
+
+    # Encode images
+    encoded_images = [encode_image(img) for img in images]
+
+    print(encoded_images[0])
+    print("\n\n",analyse_img_prompt)
+
+
+
     response = client.responses.create(
         model="gpt-4.1", 
         input=[{
             "role": "user",
             "content": [
-                {"type": "input_text", "text": "Analyse these urban images..."},
-                *[
-                    {"type": "input_image", "image_url": img}
-                    for img in images
-                ]
+                {"type": "input_text", "text": analyse_img_prompt},
+
+                *[{"type": "input_image", "image_url": f"data:image/jpeg;base64,{img_b64}"}
+                    for img_b64 in encoded_images]
+
             ]
         }],
-        response_format={
-            "type": "json_schema",
-            "json_schema": {...}
-        }
     )
-    return response.output_parsed
+
+    with open(json_filepath, 'w') as f:
+        json.dump(response.output_text, f, indent=4)
+
+    return response
 
 
 # --------------------------------------------------------------------
 
 # 👤 Context Agent
 
-def context_agent(data):
+def vibe_agent(data):
 
     prompt = f"""
     Analyse the following reviews and place data...
@@ -82,11 +117,7 @@ def place_agent():
         The text is: {results}
 
         Use the URL as a header for the information.
-        Return the information as a structured json object. 
-
-        The json object should have the following keys:
-        - URL source
-        - Insights (i.e AI generated insights about the place)
+        Return generated insights about the place based on the census data.
 
         """
 
@@ -115,10 +146,8 @@ def place_agent():
 
             The URL is: {url}
 
-            Return the information as a structured json object.
-            The json object should have the following keys:
-            - URL source
-            - Insights (i.e AI generated insights about the place)
+            Use the URL as a header for the information.
+            Return generated insights about the place based on the URL information. Keep the response to approximately 100-200 words
             """
 
             response = client.responses.create(
@@ -160,8 +189,7 @@ def pattern_agent(data):
     interesting and ideally not obvious to a human observer. For example you could review information about the pixel values, 
     metadata, subject matter etc.  
    
-    Your response should be a JSON object with the following keys:
-    - Insights (i.e AI generated insights about patterns occuring within the image data set)
+    Your response should be generated insights about patterns occuring within the image data set. Keep the response to approximately 100-200 words
 
     The data is: {data}
     """
@@ -186,7 +214,7 @@ def insights_agent(data):
     For example crime prevention through environmental design (CPTEC) opportunities and concerns. Concerns around accessibility, disability, visibility, lighting,
      noise, and other factors.
     
-    Your response should be a JSON object with the following keys:
+    Your response should include the following information. Keep the response to approximately 100-200 words
     - CPTED (Crime Prevention Through Environmental Design) Opportunities and Concerns
     - Accessibility Opportunities and Concerns
     - Insights (i.e AI generated insights about patterns occuring within the image data set)
@@ -220,8 +248,6 @@ def synthesis_agent(inputs):
     - Place data: {inputs['place']}
     - Pattern data: {inputs['pattern']}
     - Insights data: {inputs['insights']}
-    - RECOMMENDATIONS: ie AI design recommendations for the place based on the data.
-
 
 
     Resolve conflicts and produce a NARRATIVE SUMMARY of the urban intelligence. 
@@ -229,20 +255,23 @@ def synthesis_agent(inputs):
     Aim for approximately 100 words for each section.
 
 
-    Following the NARRATIVE SUMMARY, produce a JSON object labelled "URBAN DNA" with the following keys:
+    Following the NARRATIVE SUMMARY, include a section called "RECOMMENDATIONS" which includes a dot point list of AI design recommendations 
+    for the place based on the data. 
+    
+    
+    Following the RECOMMENDATIONS, produce a JSON object labelled "URBAN DNA" with the following keys:
 
+    Insights: (i.e AI generated insights about the place)
     Height Range: 
     Dominant Use:     
     Primary Typology: 
     Material Palette: 
     Activity Level:   
     Style:            
+    Detected elements: (i.e list of clearly visible elements in the vision data)
     Confidence: 
     Demographics: (including income, education, employment, housing, population etc)
-    Insights: (i.e AI generated insights about the place)
-
-
-
+    Aggregate Scores: As defined in the vision data 
 
     """
 
@@ -254,5 +283,27 @@ def synthesis_agent(inputs):
     return response
 
 
-# if __name__ == "__main__":
-    # print(place_agent())
+if __name__ == "__main__":
+
+  # -------------------------------------
+    # Load images
+    # -------------------------------------
+
+    ROOT_DIR = Path(__file__).parent
+    IMG_DIR = ROOT_DIR / "images"
+
+
+
+
+    images = []
+
+    for file in os.listdir(IMG_DIR):
+        if file.endswith(('.JPG', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp')):
+            images.append(os.path.join(IMG_DIR, file))
+
+
+
+
+    output = vision_agent(images)
+    Json = json.loads(output.output_text)
+    print(json.dumps(Json, indent=4))
