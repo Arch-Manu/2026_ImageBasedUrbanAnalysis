@@ -69,14 +69,41 @@ def parse_urban_dna(synthesis_text: str) -> dict | None:
     return None
 
 
+def _normalize_urban_dna(d: dict | None) -> dict | None:
+    """
+    Promote a nested ``{\"URBAN DNA\": {...}}`` (or ``urban_dna``) wrapper to top-level keys.
+
+    Synthesis often emits the JSON block with an extra wrapper; the UI and ``dna_pick`` expect
+    flat keys such as ``Height Range``, ``Dominant Use``, ``Demographics``.
+    Top-level keys other than the wrapper overwrite inner keys (e.g. merged vision fields).
+    """
+    if not d or not isinstance(d, dict):
+        return d
+    inner = d.get("URBAN DNA")
+    if not isinstance(inner, dict):
+        inner = d.get("urban_dna")
+    if not isinstance(inner, dict):
+        return d
+    out = dict(inner)
+    for k, v in d.items():
+        if k in ("URBAN DNA", "urban_dna"):
+            continue
+        out[k] = v
+    return out
+
+
 def merge_urban_from_vision(
     urban_dna: dict | None,
     vision_parsed: dict | None,
 ) -> dict | None:
+
     """
     Fill gaps in synthesis Urban DNA using root-level Vision JSON (aggregate scores, etc.).
     Ensures metrics/charts still populate when synthesis JSON parsing is incomplete.
     """
+
+    urban_dna = _normalize_urban_dna(urban_dna)
+
     out: dict = {}
     if isinstance(urban_dna, dict):
         out.update(urban_dna)
@@ -236,28 +263,28 @@ def run_analysis(
         raise ValueError("run_analysis requires at least one image path")
 
     if on_progress:
-        progress_text = "Analysing images with Vision Agent…"
+        progress_text = "Analysing images with Vision Agent......................................................................................... "
         on_progress(progress_text, 0.0)
     vision_data = vision_agent(paths)
     vision_text = vision_data.output_text
 
     if on_progress:
-        progress_text = progress_text + "                                                      Identifying patterns with Pattern Agent…"
+        progress_text = progress_text + "Identifying patterns with Pattern Agent....................................................................................... "
         on_progress(progress_text, 1 / 5)
     pattern_data = pattern_agent(vision_data)
 
     if on_progress:
-        progress_text = progress_text + "                                                      Analysing street insights with Insights Agent…"
+        progress_text = progress_text + "Analysing street insights with Insights Agent.............................................................................. "
         on_progress(progress_text, 2 / 5)
     insights_data = insights_agent(vision_data)
 
     if on_progress:
-        progress_text = progress_text + "                                                      Extracting place information with Place Agent…"
+        progress_text = progress_text + "Extracting place information with Place Agent............................................................................. "
         on_progress(progress_text, 3 / 5)
     place_data = place_agent()
 
     if on_progress:
-        progress_text = progress_text + "                                                      Synthesising urban intelligence…"
+        progress_text = progress_text + "Synthesising urban intelligence......................................................................................... "
         on_progress(progress_text, 4 / 5)
     final = synthesis_agent(
         {
@@ -295,6 +322,13 @@ def dna_pick(dna: dict | None, *keys: str):
     for k in keys:
         if k in dna:
             return dna[k]
+    nested = dna.get("URBAN DNA")
+    if not isinstance(nested, dict):
+        nested = dna.get("urban_dna")
+    if isinstance(nested, dict):
+        for k in keys:
+            if k in nested:
+                return nested[k]
     return None
 
 

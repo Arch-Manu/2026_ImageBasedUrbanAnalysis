@@ -1,0 +1,341 @@
+{
+  "urban_dna": {
+    "URBAN DNA": {
+      "Insights": "O’Connell St presents a stable enclosure-driven streetscape with heritage value and a clear potential for activation. The pattern shows strong street walls and historic contextual cues, but ground-floor activity remains modest. A targeted placemaking program—ground-floor activation, seating, shade, and legible wayfinding—could translate latent walkability into everyday life while preserving the street’s character.",
+      "Height Range": "Mid-rise to high-rise along edges; historic low-rise cottages at ground level",
+      "Dominant Use": "Commercial/office with ground-floor retail; heritage-residential edges",
+      "Primary Typology": "Enclosed canyon street with strong street walls",
+      "Material Palette": "Brick, timber, glass, concrete, steel",
+      "Activity Level": "Low to moderate (latent activity with potential for activation)",
+      "Style": "Heritage-contemporary fusion",
+      "Detected elements": [
+        "pedestrian crosswalks",
+        "traffic signals",
+        "historic cottages",
+        "modern office buildings",
+        "street trees",
+        "awnings",
+        "footpaths",
+        "pedestrian",
+        "baby stroller",
+        "office towers",
+        "road signs"
+      ],
+      "Confidence": 0.75,
+      "Demographics": {
+        "Population": 493515,
+        "MedianAge": 34,
+        "IndigenousPct": 0.8,
+        "LanguageHome": {
+          "EnglishOnly": 32.4,
+          "NonEnglish": 67.3
+        },
+        "TopLanguages": [
+          "Arabic",
+          "Mandarin",
+          "Cantonese",
+          "Korean",
+          "Nepali"
+        ],
+        "Dwellings": {
+          "PrivateDwellings": 187878,
+          "OccupiedPrivateDwellings": 161771,
+          "Rented": 72169,
+          "MortgageOwners": 48042,
+          "OwnedOutright": 35990,
+          "AvgPeoplePerDwelling": 2.8,
+          "AvgVehiclesPerDwelling": 1.6
+        },
+        "Income": {
+          "MedianWeeklyHousehold": 1828,
+          "MedianWeeklyRent": 430,
+          "MedianMortgageRepayments": 2200
+        },
+        "EducationAttainment": {
+          "BachelorOrAbove": 131520,
+          "Year12": 70078,
+          "AdvancedDiplomaAndDiploma": 36659
+        },
+        "LaborForce": {
+          "ParticipationRate15Plus": 54.5,
+          "UnemploymentRate": 7.0
+        },
+        "TopOccupations": [
+          "Professionals",
+          "Clerical/Administrative",
+          "Managers",
+          "Technicians/Trades"
+        ],
+        "TopIndustries": [
+          "Computer System Design",
+          "Hospitals",
+          "Banking",
+          "Grocery/Retail",
+          "Aged Care"
+        ],
+        "HousingStructure": {
+          "SeparateHouse": 46.6,
+          "SemiDetached": 14.2,
+          "FlatApartment": 38.6,
+          "Other": 0.3
+        }
+      },
+      "Aggregate Scores": {
+        "PedestrianActivity": {
+          "mean": 33,
+          "min": 30,
+          "max": 35
+        },
+        "ActiveFrontages": {
+          "mean": 50,
+          "min": 50,
+          "max": 50
+        },
+        "ShadeComfort": {
+          "mean": 33,
+          "min": 30,
+          "max": 35
+        },
+        "GreenInfrastructure": {
+          "mean": 38,
+          "min": 35,
+          "max": 40
+        },
+        "Walkability": {
+          "mean": 60,
+          "min": 60,
+          "max": 60
+        },
+        "PerceivedSafety": {
+          "mean": 60,
+          "min": 60,
+          "max": 60
+        },
+        "StreetEnclosure": {
+          "mean": 63,
+          "min": 60,
+          "max": 65
+        },
+        "HeritageCharacter": {
+          "mean": 62,
+          "min": 60,
+          "max": 65
+        },
+        "OverallLiveabilityMean": 49
+      }
+    },
+    "Aggregate Scores": {
+      "pedestrian_activity": {
+        "mean": 33,
+        "min": 30,
+        "max": 35
+      },
+      "active_frontages": {
+        "mean": 50,
+        "min": 50,
+        "max": 50
+      },
+      "shade_comfort": {
+        "mean": 33,
+        "min": 30,
+        "max": 35
+      },
+      "green_infrastructure": {
+        "mean": 38,
+        "min": 35,
+        "max": 40
+      },
+      "walkability": {
+        "mean": 60,
+        "min": 60,
+        "max": 60
+      },
+      "perceived_safety": {
+        "mean": 60,
+        "min": 60,
+        "max": 60
+      },
+      "street_enclosure": {
+        "mean": 63,
+        "min": 60,
+        "max": 65
+      },
+      "heritage_character": {
+        "mean": 62,
+        "min": 60,
+        "max": 65
+      }
+    },
+    "Insights": "Street: O'Connell St. Overall liveability (vision): 49."
+  },
+  "vision_parsed": {
+    "export_metadata": {
+      "tool": "Streetscape Analyser v0.2",
+      "export_timestamp": "2024-06-21T13:45:00Z",
+      "analysis_type": "street_survey",
+      "model": "gpt-4-vision"
+    },
+    "street": {
+      "name": "O'Connell St",
+      "photo_count": 2,
+      "overall_liveability_mean": 49
+    },
+    "aggregate_scores": {
+      "pedestrian_activity": {
+        "mean": 33,
+        "min": 30,
+        "max": 35
+      },
+      "active_frontages": {
+        "mean": 50,
+        "min": 50,
+        "max": 50
+      },
+      "shade_comfort": {
+        "mean": 33,
+        "min": 30,
+        "max": 35
+      },
+      "green_infrastructure": {
+        "mean": 38,
+        "min": 35,
+        "max": 40
+      },
+      "walkability": {
+        "mean": 60,
+        "min": 60,
+        "max": 60
+      },
+      "perceived_safety": {
+        "mean": 60,
+        "min": 60,
+        "max": 60
+      },
+      "street_enclosure": {
+        "mean": 63,
+        "min": 60,
+        "max": 65
+      },
+      "heritage_character": {
+        "mean": 62,
+        "min": 60,
+        "max": 65
+      }
+    },
+    "photos": [
+      {
+        "photo_index": 0,
+        "filename": "image1.jpg",
+        "urban_analysis": {
+          "overall_score": 49,
+          "verdict": "A functional but under-activated intersection with moderate enclosure and heritage presence.",
+          "dimension_scores": {
+            "pedestrian_activity": {
+              "score": 30,
+              "note": "Few pedestrians visible, low street life."
+            },
+            "active_frontages": {
+              "score": 50,
+              "note": "Ground floors have some visible entrances; commercial but not lively."
+            },
+            "shade_comfort": {
+              "score": 30,
+              "note": "Some street trees and awnings, generally limited shade."
+            },
+            "green_infrastructure": {
+              "score": 35,
+              "note": "Sparse vegetation, few street trees and small landscaping patches."
+            },
+            "walkability": {
+              "score": 60,
+              "note": "Footpaths present, crosswalks clearly marked, moderate width and accessibility."
+            },
+            "perceived_safety": {
+              "score": 60,
+              "note": "Lighting fixtures visible, open sightlines, some passive surveillance."
+            },
+            "street_enclosure": {
+              "score": 60,
+              "note": "Buildings define street edges; moderate urban canyon effect."
+            },
+            "heritage_character": {
+              "score": 60,
+              "note": "Historic low-rise cottages contrast with modern office towers."
+            }
+          },
+          "narrative": "This intersection presents a mix of old and new, with noticeable heritage cottages adjacent to high-rise commercial buildings. Pedestrian use is minimal, suggesting limited attraction or connectivity. Green elements are present but weak compared to the expanses of building and roadway. Street enclosure is provided by the tall buildings, and walkability is functional with defined footpaths and crossing facilities. The street benefits from some character due to preserved historic structures, although it lacks vibrancy and comfort features.",
+          "detected_elements": [
+            "pedestrian crosswalks",
+            "traffic signals",
+            "historic cottages",
+            "modern office buildings",
+            "street trees",
+            "awnings",
+            "footpaths",
+            "pedestrian",
+            "baby stroller"
+          ]
+        },
+        "error": null
+      },
+      {
+        "photo_index": 1,
+        "filename": "image2.jpg",
+        "urban_analysis": {
+          "overall_score": 49,
+          "verdict": "A well-structured urban environment with some greenery and heritage value, but limited pedestrian activity.",
+          "dimension_scores": {
+            "pedestrian_activity": {
+              "score": 35,
+              "note": "A few pedestrians visible, generally low activity for the street's scale."
+            },
+            "active_frontages": {
+              "score": 50,
+              "note": "Some street-oriented buildings and commercial windows, not strongly engaging."
+            },
+            "shade_comfort": {
+              "score": 35,
+              "note": "Some trees and building awnings, overall shade limited."
+            },
+            "green_infrastructure": {
+              "score": 40,
+              "note": "Visible trees and small shrubs, yet coverage is scattered and modest."
+            },
+            "walkability": {
+              "score": 60,
+              "note": "Sidewalks are continuous, tactile paving is present at crossings."
+            },
+            "perceived_safety": {
+              "score": 60,
+              "note": "Streetlights and visibility are adequate, intersection visibility is good for users."
+            },
+            "street_enclosure": {
+              "score": 65,
+              "note": "High-rise buildings along both sides, strong spatial definition."
+            },
+            "heritage_character": {
+              "score": 65,
+              "note": "Distinct historic structures juxtaposed against newer buildings provide character."
+            }
+          },
+          "narrative": "This scene captures broad roadways flanked by high-rise glass and dark-clad towers, with interspersed historic cottages. While the setting is orderly, foot traffic seems especially light for a central district. Green infrastructure and shade elements exist but are not prominent, limiting comfort. The architectural contrast adds interest and heritage value, though frontage activity is subdued. Overall, the streetscape feels safe and walkable, if not lively or richly vegetated.",
+          "detected_elements": [
+            "crosswalks",
+            "traffic signals",
+            "historic cottages",
+            "office towers",
+            "street trees",
+            "awnings",
+            "footpaths",
+            "pedestrians",
+            "road signs"
+          ]
+        },
+        "error": null
+      }
+    ]
+  },
+  "synthesis_text": "NARRATIVE SUMMARY\n\nVision\nO’Connell St emerges as a heritage-forward urban corridor that threads safety, legibility, and reconciling character with gentle activation. The street’s strongest asset is its enclosure: tall edges from modern office towers paired with preserved historic cottages, which together define a legible street wall and a distinct sense of place. The vision foregrounds CPTED principles—clear sightlines, good lighting, accessible crossings—while inviting more daytime and evening life through ground-floor activation, seating, shaded nooks, and micro-placemaking. By pairing a restrained material language with pockets of lively edge uses, the street can become more welcoming without compromising its historic edge.\n\nPlace\nThe place reads as a two-tiered urban fabric: a corridor of mid-to-high-rise edges that creates a canyon-like enclosure, punctuated at ground level by historic cottages and modest commercial frontages. Ground-floor activation is currently underdeveloped, yielding a calm but underutilized pedestrian environment. Shade and greenery exist but are not robust, producing intermittent comfort. The character feels orderly and legible—heritage textures at the street’s edge against contemporary office towers behind. This juxtaposition underpins a strong sense of place but signals the need for targeted interventions to improve comfort, mobility, and day-to-day vibrancy.\n\nPattern\nAcross the two views, a consistent pattern emerges: a well-defined street wall with strong enclosure, clear edge conditions, and a readable hierarchy of uses. The pattern supports safe, walkable connections but reveals a gap between structural quality and active street life. Heritage cues anchor the character, while modern towers shape the skyline and backdrop. Ground-floor uses lag behind the architecture, creating latent potential for activation. The consistency of this pattern—enclosure plus historic context with moderate walkability—presents a clear, low-risk basis for targeted placemaking that amplifies life without eroding the street’s character.\n\nInsights\nThe data signal a solid livability baseline (liveability ~49; walkability ~60; perceived safety ~60) but a notable activation deficit. CPTED opportunities lie in activating frontages and seating to raise daytime pedestrian life, while maintaining sightlines and consistent lighting along crossings. Accessibility improvements—curb cuts, ramps, audible signals, and more shade—can broaden use by a wider range of users. The Parramatta context implies a diverse, younger, educated population with high rental demand, suggesting strong market potential for mixed-use activation, small-scale plazas, and durable street furniture that supports longer street stays.\n\nRECOMMENDATIONS\n- Activate ground-floor uses along O’Connell St (cafes, retail, pop-ups) and introduce 2–3 seating nodes per block to shift latent pedestrian life into real activity.\n- Expand shade and greenery with street trees, canopy canopies, and planter pockets to improve comfort during peak heat and support longer stops.\n- Implement CPTED improvements: maintain clear sightlines, optimize lighting along crossings, trim selective vegetation, and install durable street furniture and wayfinding.\n- Improve accessibility: add curb cuts, ramps, tactile paving, audible signals where needed, and accessible seating to ensure inclusive routes.\n- Strengthen the heritage-contemporary edge: use a restrained material palette that nods to historic brickwork while embracing modern glass/metal accents for cohesion.\n- Create micro-plazas at key corners to punctuate the street with legible destinations and resting places.\n- Pilot a 6–12 week activation program (pilot seating, shade canopies, and small-scale pop-ups) to measure impact on pedestrian counts and dwell time.\n- Align signage and wayfinding to reinforce legitimate activity and facilitate easy navigation for residents, workers, and visitors.\n\nURBAN DNA\n{\n  \"URBAN DNA\": {\n    \"Insights\": \"O’Connell St presents a stable enclosure-driven streetscape with heritage value and a clear potential for activation. The pattern shows strong street walls and historic contextual cues, but ground-floor activity remains modest. A targeted placemaking program—ground-floor activation, seating, shade, and legible wayfinding—could translate latent walkability into everyday life while preserving the street’s character.\",\n    \"Height Range\": \"Mid-rise to high-rise along edges; historic low-rise cottages at ground level\",\n    \"Dominant Use\": \"Commercial/office with ground-floor retail; heritage-residential edges\",\n    \"Primary Typology\": \"Enclosed canyon street with strong street walls\",\n    \"Material Palette\": \"Brick, timber, glass, concrete, steel\",\n    \"Activity Level\": \"Low to moderate (latent activity with potential for activation)\",\n    \"Style\": \"Heritage-contemporary fusion\",\n    \"Detected elements\": [\n      \"pedestrian crosswalks\",\n      \"traffic signals\",\n      \"historic cottages\",\n      \"modern office buildings\",\n      \"street trees\",\n      \"awnings\",\n      \"footpaths\",\n      \"pedestrian\",\n      \"baby stroller\",\n      \"office towers\",\n      \"road signs\"\n    ],\n    \"Confidence\": 0.75,\n    \"Demographics\": {\n      \"Population\": 493515,\n      \"MedianAge\": 34,\n      \"IndigenousPct\": 0.8,\n      \"LanguageHome\": {\n        \"EnglishOnly\": 32.4,\n        \"NonEnglish\": 67.3\n      },\n      \"TopLanguages\": [\"Arabic\", \"Mandarin\", \"Cantonese\", \"Korean\", \"Nepali\"],\n      \"Dwellings\": {\n        \"PrivateDwellings\": 187878,\n        \"OccupiedPrivateDwellings\": 161771,\n        \"Rented\": 72169,\n        \"MortgageOwners\": 48042,\n        \"OwnedOutright\": 35990,\n        \"AvgPeoplePerDwelling\": 2.8,\n        \"AvgVehiclesPerDwelling\": 1.6\n      },\n      \"Income\": {\n        \"MedianWeeklyHousehold\": 1828,\n        \"MedianWeeklyRent\": 430,\n        \"MedianMortgageRepayments\": 2200\n      },\n      \"EducationAttainment\": {\n        \"BachelorOrAbove\": 131520,\n        \"Year12\": 70078,\n        \"AdvancedDiplomaAndDiploma\": 36659\n      },\n      \"LaborForce\": {\n        \"ParticipationRate15Plus\": 54.5,\n        \"UnemploymentRate\": 7.0\n      },\n      \"TopOccupations\": [\"Professionals\", \"Clerical/Administrative\", \"Managers\", \"Technicians/Trades\"],\n      \"TopIndustries\": [\"Computer System Design\", \"Hospitals\", \"Banking\", \"Grocery/Retail\", \"Aged Care\"],\n      \"HousingStructure\": {\n        \"SeparateHouse\": 46.6,\n        \"SemiDetached\": 14.2,\n        \"FlatApartment\": 38.6,\n        \"Other\": 0.3\n      }\n    },\n    \"Aggregate Scores\": {\n      \"PedestrianActivity\": {\"mean\": 33, \"min\": 30, \"max\": 35},\n      \"ActiveFrontages\": {\"mean\": 50, \"min\": 50, \"max\": 50},\n      \"ShadeComfort\": {\"mean\": 33, \"min\": 30, \"max\": 35},\n      \"GreenInfrastructure\": {\"mean\": 38, \"min\": 35, \"max\": 40},\n      \"Walkability\": {\"mean\": 60, \"min\": 60, \"max\": 60},\n      \"PerceivedSafety\": {\"mean\": 60, \"min\": 60, \"max\": 60},\n      \"StreetEnclosure\": {\"mean\": 63, \"min\": 60, \"max\": 65},\n      \"HeritageCharacter\": {\"mean\": 62, \"min\": 60, \"max\": 65},\n      \"OverallLiveabilityMean\": 49\n    }\n  }\n}",
+  "pattern": "Two images of O'Connell St reveal a stable, walkable streetscape with strong enclosure and heritage cues, yet with muted pedestrian life.\n\n- Consistent livability baseline: overall_liveability_mean is 49 in both shots, and walkability/perceived safety clamp at 60, suggesting a reliable, functional street design that prioritizes safety and connectivity over vibrancy.\n- Enclosure and heritage drive character: street_enclosure (60–65) and heritage_character (60–65) are elevated in both images, indicating tall edges and historic context strongly shape perception, even when ground-floor activation is modest.\n- Activation lag behind structure: active_frontages stay at 50 while pedestrian_activity sits around 30–35, highlighting a mismatch between the architectural/edge quality and on-the-ground activity.\n- Shade and greenery are underpowered: shade_comfort and green_infrastructure sit in the mid-30s, pointing to opportunities to boost comfort through trees, canopies, and small plazas.\n- Subtle improvement signals: the second image nudges some scores upward (shade, greenery), yet differences are small—tiny design tweaks could disproportionately lift perceived livability without altering the character.\n\nImplication: enhance activation at street level (frontages, seating) and boost micro-greenery to convert latent walkability into actual pedestrian life.",
+  "insights": "CPTED Opportunities and Concerns\n- Opportunities: Increase natural surveillance by activating ground-floor uses (retail/cafes) and seating to raise daytime pedestrian activity; maintain clear sightlines with selective tree trimming and consistent lighting along crossings; reinforce territory with durable street furniture and wayfinding that cues legitimate use of the space.\n- Concerns: Under-activated intersection and subdued street life create low natural surveillance windows; some facades are less engaging and shade is limited, potentially creating dead zones and concealment opportunities.\n\nAccessibility Opportunities and Concerns\n- Opportunities: Existing crosswalks are clearly marked with tactile paving and continuous sidewalks; lighting and visibility are adequate. Maintain accessible routes with curb cuts, ramps, and audible signals where needed; add more shade and seating to support comfort for diverse users.\n- Concerns: Limited shade and green infrastructure may deter long-term street use; ground-floor activation gaps can hinder route choice for people with disabilities seeking destinations along the street.\n\nInsights\n- Pattern shows strong street enclosure and heritage value with moderate walkability and perceived safety, but low pedestrian activity. Targeted activation (ground-floor uses, seating, shade) could boost accessibility, safety, and CPTED effectiveness, leveraging heritage while improving livability."
+}

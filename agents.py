@@ -245,8 +245,8 @@ def synthesis_agent(inputs):
 
     Combine:
     - Vision data: {inputs['vision']}
-    - Place data: {inputs['place']}
-    - Pattern data: {inputs['pattern']}
+    - Place / Context data: {inputs['place']}
+    - Multi-Image Pattern data: {inputs['pattern']}
     - Insights data: {inputs['insights']}
 
 
@@ -285,25 +285,14 @@ def synthesis_agent(inputs):
 
 if __name__ == "__main__":
 
-  # -------------------------------------
-    # Load images
-    # -------------------------------------
-
-    ROOT_DIR = Path(__file__).parent
-    IMG_DIR = ROOT_DIR / "images"
+    print("Hello World")
 
 
 
 
-    images = []
-
-    for file in os.listdir(IMG_DIR):
-        if file.endswith(('.JPG', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp')):
-            images.append(os.path.join(IMG_DIR, file))
 
 
 
 
-    output = vision_agent(images)
-    Json = json.loads(output.output_text)
-    print(json.dumps(Json, indent=4))
+
+

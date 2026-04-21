@@ -171,11 +171,16 @@ def apply_shared_styles() -> None:
             font-weight: 500;
         }
         .agg-row-compact .agg-num {
-            flex: 0 0 2.5rem;
+            flex: 0 0 3.25rem;
             text-align: right;
             font-variant-numeric: tabular-nums;
             font-weight: 600;
             color: var(--black);
+        }
+        .agg-row-compact .agg-denom {
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.72;
         }
         .agg-row-compact .agg-bar-wrap {
             flex: 1;

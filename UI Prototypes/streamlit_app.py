@@ -75,27 +75,13 @@ def _format_demo_value(val):
     return str(val)
 
 
-def _agg_compact_row(
-    label: str,
-    mean: float,
-    *,
-    mn=None,
-    mx=None,
-    show_range: bool = False,
-) -> str:
-    pct = min(100.0, max(0.0, float(mean)))
+def _agg_compact_row(label: str, score_0_100: float) -> str:
+    pct = min(100.0, max(0.0, float(score_0_100)))
     label_e = html.escape(label)
-    extra = ""
-    if show_range and mn is not None and mx is not None:
-        extra = (
-            f' <span style="font-size:11px;opacity:0.75">'
-            f"({html.escape(str(mn))}–{html.escape(str(mx))})"
-            f"</span>"
-        )
     return (
         f'<div class="agg-row-compact">'
-        f'<span class="agg-name">{label_e}{extra}</span>'
-        f'<span class="agg-num">{mean:.0f}</span>'
+        f'<span class="agg-name">{label_e}</span>'
+        f'<span class="agg-num">{pct:.0f}<span class="agg-denom">/100</span></span>'
         f'<div class="agg-bar-wrap"><div class="agg-bar-fill" style="width:{pct}%;">'
         f"</div></div></div>"
     )
@@ -140,7 +126,7 @@ st.caption("Context photography workflow")
 
 st.text_input(
     "Address",
-    placeholder="Enter your address here",
+    placeholder="31 Macquarie Street, Parramatta",
     key="visual_address",
 )
 
@@ -219,7 +205,6 @@ with col_right:
         if photo_detail and photo_detail.get("overall_score") is not None:
             try:
                 os_ = float(photo_detail["overall_score"])
-                st.caption(f"Vision image score: {os_:.0f}/100")
             except (TypeError, ValueError):
                 pass
 
@@ -317,10 +302,12 @@ if result:
     mat_pal = dna_pick(urban, "Material Palette", "material_palette")
     agg = dna_pick(urban, "Aggregate Scores", "aggregate_scores") or {}
     af_mean = None
-    if isinstance(agg, dict) and "active_frontages" in agg:
-        v = agg["active_frontages"]
-        if isinstance(v, dict) and "mean" in v:
-            af_mean = v["mean"]
+    if isinstance(agg, dict):
+        for _k in ("active_frontages", "ActiveFrontages"):
+            v = agg.get(_k)
+            if isinstance(v, dict) and v.get("mean") is not None:
+                af_mean = v["mean"]
+                break
 
     metric_cols = st.columns(4)
     metrics = [
@@ -357,30 +344,10 @@ if result:
         if excerpt:
             st.markdown(excerpt)
 
-    chart_cols = st.columns(3)
+    chart_cols = st.columns(2)
+
 
     with chart_cols[0]:
-        st.markdown("**Aggregate scores (mean)**")
-        if isinstance(agg, dict) and agg:
-            rows_html = ['<div class="agg-scores-block agg-scores-block--tight">']
-            for k in list(agg.keys())[:8]:
-                row = agg.get(k)
-                if not isinstance(row, dict):
-                    continue
-                mean = row.get("mean")
-                if mean is None:
-                    continue
-                try:
-                    m = float(mean)
-                except (TypeError, ValueError):
-                    continue
-                rows_html.append(
-                    _agg_compact_row(_humanize_score_key(k), m, show_range=False)
-                )
-            rows_html.append("</div>")
-            st.markdown("".join(rows_html), unsafe_allow_html=True)
-
-    with chart_cols[1]:
         st.markdown("**Style & activity**")
         style_v = dna_pick(urban, "Style", "style")
         act_v = dna_pick(urban, "Activity Level", "activity_level")
@@ -392,7 +359,7 @@ if result:
         if typ_v:
             st.markdown(f"**Typology:** {typ_v}")
 
-    with chart_cols[2]:
+    with chart_cols[1]:
         st.markdown("**Confidence**")
         conf = dna_pick(urban, "Confidence", "confidence")
         if conf is not None:
@@ -406,31 +373,24 @@ if result:
                 st.write(conf)
 
     st.markdown("#### Urban DNA (aggregate scores)")
+    st.caption("Mean scores on a 0–100 scale.")
     if isinstance(agg, dict) and agg:
         rows_html = ['<div class="agg-scores-block agg-scores-block--tight">']
         for key, row in agg.items():
             if not isinstance(row, dict):
                 continue
             mean = row.get("mean")
-            mn = row.get("min")
-            mx = row.get("max")
             if mean is None:
                 continue
             try:
                 m = float(mean)
             except (TypeError, ValueError):
                 continue
-            rows_html.append(
-                _agg_compact_row(
-                    _humanize_score_key(key),
-                    m,
-                    mn=mn,
-                    mx=mx,
-                    show_range=bool(mn is not None and mx is not None),
-                )
-            )
+            rows_html.append(_agg_compact_row(_humanize_score_key(key), m))
         rows_html.append("</div>")
         st.markdown("".join(rows_html), unsafe_allow_html=True)
+
+
 
     demo = dna_pick(urban, "Demographics", "demographics")
     if isinstance(demo, dict) and demo:
@@ -441,6 +401,11 @@ if result:
                 with dcols[i % 3]:
                     st.markdown(f"**{html.escape(str(k))}**")
                     st.text(_format_demo_value(v))
+
+
+    if synthesis_text:
+        with st.expander("Full synthesis output (raw)", expanded=False):
+            st.text(synthesis_text)
 
     export_obj = {
         "urban_dna": urban,
@@ -455,10 +420,6 @@ if result:
         file_name="urban_analysis_export.json",
         mime="application/json",
     )
-
-    if synthesis_text:
-        with st.expander("Full synthesis output (raw)", expanded=False):
-            st.text(synthesis_text)
 
 # Footer
 st.markdown("---")
