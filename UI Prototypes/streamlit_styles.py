@@ -146,13 +146,56 @@ def apply_shared_styles() -> None:
         .tag-pill {
             display: inline-block;
             background: var(--chip-bg);
-            color: var(--chip-fg);
+            color: var(--black) !important;
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 12px;
             margin-right: 8px;
             margin-bottom: 8px;
             border: 1px solid var(--chip-border);
+        }
+
+        /* Compact aggregate score rows (label + value + bar) */
+        .agg-row-compact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+            font-size: 13px;
+            line-height: 1.2;
+        }
+        .agg-row-compact .agg-name {
+            flex: 0 0 42%;
+            min-width: 0;
+            color: var(--black);
+            font-weight: 500;
+        }
+        .agg-row-compact .agg-num {
+            flex: 0 0 2.5rem;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+            color: var(--black);
+        }
+        .agg-row-compact .agg-bar-wrap {
+            flex: 1;
+            min-width: 0;
+            height: 8px;
+            background: var(--slate-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .agg-row-compact .agg-bar-fill {
+            height: 100%;
+            background: var(--green);
+            border-radius: 4px;
+            min-width: 2px;
+        }
+        .agg-scores-block {
+            margin-top: 6px;
+        }
+        .agg-scores-block--tight .agg-row-compact {
+            margin-bottom: 2px;
         }
 
         .cluster-card {
