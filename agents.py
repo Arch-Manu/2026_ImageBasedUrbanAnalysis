@@ -159,11 +159,11 @@ def place_agent():
         return results
 
 
-    address = "198 Church St, Parramatta"
+    address = "31 Macquarie Street, Parramatta"
 
     urls = [
-        "https://www.realestate.com.au/property/198-church-st-parramatta-nsw-2150/",
-        "https://www.google.com/maps/place/198-church-st-parramatta-nsw-2150/"
+        "https://www.realestate.com.au/property/31-macquarie-street-parramatta-nsw-2150/",
+        "https://www.realestate.com.au/property/l3-35-macquarie-st-parramatta-nsw-2150/"
         ]
 
     census_url = "https://www.abs.gov.au/census/find-census-data/quickstats/2021/125"
@@ -185,9 +185,8 @@ def pattern_agent(data):
 
 
     prompt = f"""
-    Analyse the following data. Identify patterns that are present in the group of images. The insights should be creative and 
-    interesting and ideally not obvious to a human observer. For example you could review information about the pixel values, 
-    metadata, subject matter etc.  
+    Analyse the following data. Identify patterns that are present in the pixel values of the images. The insights should be creative and 
+    interesting and ideally not obvious to a human observer. For example you could review information about the pixel values, metadata etc.  
    
     Your response should be generated insights about patterns occuring within the image data set. Keep the response to approximately 100-200 words
 
@@ -244,14 +243,17 @@ def synthesis_agent(inputs):
     You are an urban analyst.
 
     Combine:
-    - Vision data: {inputs['vision']}
+    - Vision data / Visual summary: {inputs['vision']}
     - Place / Context data: {inputs['place']}
     - Multi-Image Pattern data: {inputs['pattern']}
-    - Insights data: {inputs['insights']}
+    - Accessibility and Insights data: {inputs['insights']}
 
 
     Resolve conflicts and produce a NARRATIVE SUMMARY of the urban intelligence. 
-    Use the heading "NARRATIVE SUMMARY". Include a paragraph for each of the following sections: Vision, Place, Pattern, Insights. 
+    Use the heading "NARRATIVE SUMMARY". Include a paragraph for each of the following sections: 
+    
+    VISUAL SUMMARY, PLACE / CONTEXT INFORMATION, MULTI-IMAGE PATTERN ANALYSIS, ACCESSIBILITY AND INSIGHTS.
+
     Aim for approximately 100 words for each section.
 
 
@@ -287,6 +289,7 @@ if __name__ == "__main__":
 
     print("Hello World")
 
+    # print(place_agent())
 
 
 
