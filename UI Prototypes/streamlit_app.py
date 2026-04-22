@@ -101,6 +101,16 @@ def _narrative_summary_excerpt(synthesis_text: str, max_chars: int = 400) -> str
     return block
 
 
+def _synthesis_before_urban_dna(text: str | None) -> str | None:
+    """Drop the URBAN DNA JSON block from raw synthesis output for display/export."""
+    if not text:
+        return None
+    m = re.search(r"\bURBAN\s+DNA\b", text, re.IGNORECASE)
+    if m:
+        return text[: m.start()].rstrip()
+    return text
+
+
 if "analysis_result" not in st.session_state:
     st.session_state.analysis_result = None
 if "analysis_error" not in st.session_state:
@@ -118,7 +128,9 @@ def _select_image(idx: int) -> None:
 result = st.session_state.analysis_result
 err = st.session_state.analysis_error
 urban = result.get("urban_dna") if result else None
-synthesis_text = result.get("synthesis_text") if result else None
+synthesis_text = (
+    _synthesis_before_urban_dna(result.get("synthesis_text")) if result else None
+)
 
 # Header
 st.markdown("### AI Urban Image Analyzer")
@@ -287,7 +299,9 @@ if run_clicked and uploaded_images:
 result = st.session_state.analysis_result
 err = st.session_state.analysis_error
 urban = result.get("urban_dna") if result else None
-synthesis_text = result.get("synthesis_text") if result else None
+synthesis_text = (
+    _synthesis_before_urban_dna(result.get("synthesis_text")) if result else None
+)
 
 if err and not result:
     st.warning("Fix the error above and run again.")
@@ -311,10 +325,10 @@ if result:
 
     metric_cols = st.columns(4)
     metrics = [
-        {"label": "Height range", "value": h_range, "subtext": "from synthesis"},
+        {"label": "Height range", "value": h_range, "subtext": ""},
         {"label": "Active frontage", "value": f"{af_mean}%" if af_mean is not None else None, "subtext": "aggregate mean"},
-        {"label": "Dominant use", "value": dom_use, "subtext": "land use"},
-        {"label": "Material", "value": mat_pal, "subtext": "palette"},
+        {"label": "Dominant use", "value": dom_use, "subtext": ""},
+        {"label": "Material", "value": mat_pal, "subtext": ""},
     ]
 
     for i, metric in enumerate(metrics):
@@ -390,7 +404,7 @@ if result:
         rows_html.append("</div>")
         st.markdown("".join(rows_html), unsafe_allow_html=True)
 
-
+    st.divider()
 
     demo = dna_pick(urban, "Demographics", "demographics")
     if isinstance(demo, dict) and demo:
