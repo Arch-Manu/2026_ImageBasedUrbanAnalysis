@@ -2,7 +2,7 @@ import streamlit as st
 import random
 from streamlit_styles import apply_shared_styles
 
-st.set_page_config(page_title='AI Urban Image Analyzer - Option 2', layout='wide')
+st.set_page_config(page_title='AI Urban Image Analyser - Option 2', layout='wide')
 apply_shared_styles()
 
 # ---------- Helpers ----------
@@ -66,7 +66,7 @@ selected_sequence = st.sidebar.selectbox('Image sequence / street segment', ['Ma
 activity_filter = st.sidebar.slider('Minimum activity score', 0, 100, 40)
 
 # ---------- Header ----------
-st.title('AI Urban Image Analyzer')
+st.title('AI Urban Image Analyser')
 st.caption(f'Option 2 wireframe • {uploaded_count} images loaded • Sequence: {selected_sequence}')
 
 # ---------- Top image-first area ----------

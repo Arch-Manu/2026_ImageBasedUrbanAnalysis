@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_styles import apply_shared_styles
 
-st.set_page_config(page_title='AI Urban Image Analyzer - Option 3', layout='wide')
+st.set_page_config(page_title='AI Urban Image Analyser - Option 3', layout='wide')
 apply_shared_styles()
 
 # ---------- Helpers ----------
@@ -49,7 +49,7 @@ show_edit_panel = st.sidebar.toggle('Show human correction panel', True)
 # Header (same visual pattern as app 0/2)
 col1, col2, col3 = st.columns([1, 2, 1])
 with col1:
-    st.markdown("### AI Urban Image Analyzer")
+    st.markdown("### AI Urban Image Analyser")
     st.caption(f"Option 3 wireframe | Focus: {focus}")
 with col2:
     st.metric("Images Loaded", image_count)

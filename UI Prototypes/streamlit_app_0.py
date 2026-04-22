@@ -3,7 +3,7 @@ from streamlit_styles import apply_shared_styles
 
 # Page config
 st.set_page_config(
-    page_title="AI Urban Image Analyzer",
+    page_title="AI Urban Image Analyser",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -13,7 +13,7 @@ apply_shared_styles()
 # Header
 col1, col2, col3 = st.columns([1, 2, 1])
 with col1:
-    st.markdown("### AI Urban Image Analyzer")
+    st.markdown("### AI Urban Image Analyser")
     st.caption("Context photography workflow")
 with col2:
     img_count = 0
@@ -217,4 +217,4 @@ for i, cluster in enumerate(clusters):
 
 # Footer
 st.markdown("---")
-st.caption("AI Urban Image Analyzer © 2026")
+st.caption("AI Urban Image Analyser © 2026")
